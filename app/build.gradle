@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.example.yuanping.weconnected"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.sina.weibo.sdk:core:4.1.0:openDefaultRelease@aar'
+    //加了这个会报错，可能会与原来的添加的jar库有冲突
+//    compile files('src/main/java/com/example/yuanping/weconnected/login/libs/weiboSDKCore_3.1.4.jar')
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.github.open-android:RoundedImageView:v1.0.0'
+    compile 'com.carson_ho:SearchLayout:1.0.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}

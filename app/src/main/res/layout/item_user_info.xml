@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.itheima.roundedimageview.RoundedImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:id="@+id/item_image_user_info"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/v_icon"
+        app:riv_border_width="1dip"
+        app:riv_border_color="#333333"
+        app:riv_oval="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:id="@+id/item_name_user_info"
+        android:text="name"
+        android:layout_toRightOf="@+id/item_image_user_info"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/item_image_user_info"
+        android:lines="1"
+        android:text="description"
+        android:id="@+id/item_description_user_info"
+        android:layout_below="@+id/item_name_user_info"/>
+
+</RelativeLayout>
